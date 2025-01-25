@@ -60,3 +60,5 @@ config.setup({
   highlight = { enable = true },
   indent = { enable = true },
 })
+
+require("competitest").setup() -- to use default configuration:
