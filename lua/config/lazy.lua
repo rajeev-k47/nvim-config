@@ -118,3 +118,6 @@ require("cyberdream").setup({
   -- Enable transparent background
   transparent = true,
 })
+require("window-picker").pick_window({
+  hint = "floating-big-letter",
+})
