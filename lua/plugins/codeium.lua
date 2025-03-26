@@ -1,13 +1,11 @@
 return {
   {
-
-    "Exafunction/codeium.nvim",
-    dependencies = {
-      "hrsh7th/nvim-cmp",
-      "nvim-lua/plenary.nvim",
-    },
+    "monkoose/neocodeium",
+    event = "VeryLazy",
     config = function()
-      require("codeium").setup({})
+      local neocodeium = require("neocodeium")
+      neocodeium.setup()
+      vim.keymap.set("i", "<A-f>", neocodeium.accept)
     end,
   },
 }
