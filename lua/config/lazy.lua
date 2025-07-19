@@ -58,10 +58,13 @@ require("lazy").setup({
 
 local config = require("nvim-treesitter.configs")
 config.setup({
-  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html" },
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html", "kotlin" },
   highlight = { enable = true },
   indent = { enable = true },
 })
+
+vim.g.tokyonight_dark_float = false
+vim.api.nvim_set_hl(0, "Search", { bg = "#444444", fg = "NONE" })
 
 require("competitest").setup() -- to use default configuration:
 local cmp = require("cmp")
@@ -110,7 +113,42 @@ cmp.setup({
     },
   },
 })
-
+require("lspconfig").dartls.setup({
+  cmd = { "dart", "language-server", "--protocol=lsp" },
+  filetypes = { "dart" },
+  init_options = {
+    closingLabels = true,
+    flutterOutline = true,
+    onlyAnalyzeProjectsWithOpenFiles = true,
+    outline = true,
+    suggestFromUnimportedLibraries = true,
+  },
+  -- root_dir = root_pattern("pubspec.yaml"),
+  settings = {
+    dart = {
+      completeFunctionCalls = true,
+      showTodos = true,
+    },
+  },
+  on_attach = function(client, bufnr) end,
+})
+require("conform").setup({
+  format_on_save = {
+    -- These options will be passed to conform.format()
+    timeout_ms = 500,
+    lsp_format = "fallback",
+  },
+  formatters_by_ft = {
+    lua = { "stylua" },
+    kotlin = { "ktlint" },
+    -- Conform will run multiple formatters sequentially
+    python = { "isort", "black" },
+    -- You can customize some of the format options for the filetype (:help conform.format)
+    rust = { "rustfmt", lsp_format = "fallback" },
+    -- Conform will run the first available formatter
+    javascript = { "prettierd", "prettier", stop_after_first = true },
+  },
+})
 require("cyberdream").setup({
   -- Set light or dark variant
   variant = "light", -- use "light" for the light variant. Also accepts "auto" to set dark or light colors based on the current value of `vim.o.background`
@@ -121,3 +159,7 @@ require("cyberdream").setup({
 require("window-picker").pick_window({
   hint = "floating-big-letter",
 })
+
+vim.keymap.set("n", "<leader>cpt", function()
+  require("utils.template").insert_cpp_template()
+end, { desc = "Insert C++ Template" })
