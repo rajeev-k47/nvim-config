@@ -156,9 +156,6 @@ require("cyberdream").setup({
   -- Enable transparent background
   transparent = true,
 })
-require("window-picker").pick_window({
-  hint = "floating-big-letter",
-})
 
 vim.keymap.set("n", "<leader>cpt", function()
   require("utils.template").insert_cpp_template()
