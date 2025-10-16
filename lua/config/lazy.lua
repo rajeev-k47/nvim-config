@@ -34,7 +34,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "tokyonight", "habamax" } },
+  -- install = { colorscheme = { "tokyonight", "habamax" } },
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update
@@ -63,8 +63,8 @@ config.setup({
   indent = { enable = true },
 })
 
-vim.g.tokyonight_dark_float = false
-vim.api.nvim_set_hl(0, "Search", { bg = "#444444", fg = "NONE" })
+-- vim.g.tokyonight_dark_float = false
+-- vim.api.nvim_set_hl(0, "Search", { bg = "#444444", fg = "NONE" })
 
 require("competitest").setup() -- to use default configuration:
 local cmp = require("cmp")
@@ -149,13 +149,23 @@ require("conform").setup({
     javascript = { "prettierd", "prettier", stop_after_first = true },
   },
 })
-require("cyberdream").setup({
-  -- Set light or dark variant
-  variant = "light", -- use "light" for the light variant. Also accepts "auto" to set dark or light colors based on the current value of `vim.o.background`
 
-  -- Enable transparent background
-  transparent = true,
-})
+local spotify = require("spotify-player")
+
+-- Normal mode
+vim.keymap.set("n", "<leader>sdt", spotify.toggle, { desc = "Toggle Spotify Player" })
+vim.keymap.set("n", "<leader>sdn", function()
+  vim.cmd("Spotify next")
+end, { desc = "Spotify Next" })
+vim.keymap.set("n", "<leader>sdp", function()
+  vim.cmd("Spotify previous")
+end, { desc = "Spotify Previous" })
+vim.keymap.set("n", "<leader>sde", function()
+  vim.cmd("Spotify volume_up")
+end, { desc = "Spotify Vol +" })
+vim.keymap.set("n", "<leader>sdx", function()
+  vim.cmd("Spotify volume_down")
+end, { desc = "Spotify Vol -" })
 
 vim.keymap.set("n", "<leader>cpt", function()
   require("utils.template").insert_cpp_template()
