@@ -5,6 +5,10 @@
   "catppuccin": { "branch": "main", "commit": "76a8d0515024cc55d8bd26fc13f1af88faef3ebf" },
   "competitest.nvim": { "branch": "master", "commit": "b42c06ca308906f07912ba9aff015ac2c0831f85" },
   "conform.nvim": { "branch": "master", "commit": "973f3cb73887d510321653044791d7937c7ec0fa" },
+<<<<<<< HEAD
+=======
+  "cyberdream.nvim": { "branch": "main", "commit": "8407e80415aebd6b052773d751dda7cd9cfc6835" },
+>>>>>>> master
   "flash.nvim": { "branch": "main", "commit": "2febce67ff9cf7638d2569d17c41af02c38401eb" },
   "friendly-snippets": { "branch": "main", "commit": "572f5660cf05f8cd8834e096d7b4c921ba18e175" },
   "fzf-lua": { "branch": "main", "commit": "83e4080ae886a42ec48c5c26ce5892ceb557c425" },
@@ -37,7 +41,10 @@
   "render-markdown.nvim": { "branch": "main", "commit": "3da7bb459f6cff03980dd1e106c46f3e62ff4d9f" },
   "smear-cursor.nvim": { "branch": "main", "commit": "58e69a911e7f5296b3d7fec5e7414df5a4ac91fb" },
   "snacks.nvim": { "branch": "main", "commit": "454ba02d69347c0735044f159b95d2495fc79a73" },
+<<<<<<< HEAD
   "spotify-player.nvim": { "branch": "main", "commit": "341c2af27937fc680c2500ffa0da6c2a80b5da1e" },
+=======
+>>>>>>> master
   "telescope.nvim": { "branch": "master", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" },
   "todo-comments.nvim": { "branch": "main", "commit": "19d461ddd543e938eb22505fb03fa878800270b6" },
   "tokyonight.nvim": { "branch": "main", "commit": "d14614cbfc63b6037bfccd48bb982d2ad2003352" },
