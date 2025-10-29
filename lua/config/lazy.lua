@@ -150,6 +150,8 @@ require("conform").setup({
   },
 })
 
+vim.api.nvim_set_hl(0, "CursorLine", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "NONE" })
 local spotify = require("spotify-player")
 
 -- Normal mode
@@ -173,20 +175,24 @@ end, { desc = "Insert C++ Template" })
 
 local function show_help()
   local buf = vim.api.nvim_create_buf(false, true)
-  local lines = vim.fn.readfile(vim.fn.stdpath("config") .. "/templates/markdown.md")
+  local file = vim.fn.stdpath("config") .. "/templates/markdown.md"
+  local lines = vim.fn.readfile(file)
   vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
 
-  local width = math.floor(vim.o.columns * 0.5)
-  local height = math.floor(vim.o.lines * 0.5)
-  local row = math.floor((vim.o.lines - height) / 2)
-  local col = math.floor((vim.o.columns - width) / 2)
+  vim.api.nvim_buf_set_name(buf, file)
+  vim.api.nvim_buf_set_option(buf, "filetype", "markdown")
+
+  local w = math.floor(vim.o.columns * 0.5)
+  local h = math.floor(vim.o.lines * 0.5)
+  local r = math.floor((vim.o.lines - h) / 2)
+  local c = math.floor((vim.o.columns - w) / 2)
 
   vim.api.nvim_open_win(buf, true, {
     relative = "editor",
-    width = width,
-    height = height,
-    row = row,
-    col = col,
+    width = w,
+    height = h,
+    row = r,
+    col = c,
     style = "minimal",
     border = "rounded",
   })
