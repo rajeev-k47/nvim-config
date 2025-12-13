@@ -19,7 +19,26 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    {
+      "nvim-treesitter/nvim-treesitter",
+      build = ":TSUpdate",
+      opts = {
+        ensure_installed = {
+          "c",
+          "lua",
+          "vim",
+          "vimdoc",
+          "query",
+          "elixir",
+          "heex",
+          "javascript",
+          "html",
+          "kotlin",
+        },
+        highlight = { enable = true },
+        indent = { enable = true },
+      },
+    },
     -- import/override with your plugins
     { import = "plugins" },
 
@@ -54,13 +73,6 @@ require("lazy").setup({
       },
     },
   },
-})
-
-local config = require("nvim-treesitter.configs")
-config.setup({
-  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html", "kotlin" },
-  highlight = { enable = true },
-  indent = { enable = true },
 })
 
 -- vim.g.tokyonight_dark_float = false
@@ -199,3 +211,9 @@ local function show_help()
 end
 
 vim.keymap.set("n", "<leader>hm", show_help)
+
+vim.keymap.set({ "i", "s" }, "<C-k>", function()
+  require("luasnip").expand_or_jump()
+end, { silent = true })
+
+require("config.snippets")
