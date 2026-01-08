@@ -1,2 +1,20 @@
-# 💤 LazyVim
-Bruh
+## Plugins
+
+- [LazyVim](https://github.com/LazyVim/LazyVim)
+- [LazyGit](https://github.com/LazyVim/LazyGit)
+- [Catppuccin.nvim](https://github.com/catppuccin/nvim)
+- [Codeium.nvim](https://github.com/Exafunction/codeium.vim)
+- [Conform.nvim](https://github.com/stevearc/conform.nvim)
+- [Cmp](https://github.com/hrsh7th/nvim-cmp)
+- [Competitest.nvim](https://github.com/xeluxee/competitest.nvim)
+- [Cord.nvim](https://github.com/vyfor/cord.nvim)
+- [Image.nvim](https://github.com/3rd/image.nvim)
+- [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
+- [Mason.nvim](https://github.com/mason-org/mason.nvim)
+- [LeetCode.nvim](https://github.com/kawre/leetcode.nvim)
+- [Neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
+- [Render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
+- [Smear-cursor.nvim](https://github.com/sphamba/smear-cursor.nvim)
+- [Spotify.nvim](https://github.com/Caronte995/spotify-player.nvim)
+- [Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+
