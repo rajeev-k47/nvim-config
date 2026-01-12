@@ -17,4 +17,4 @@
 - [Smear-cursor.nvim](https://github.com/sphamba/smear-cursor.nvim)
 - [Spotify.nvim](https://github.com/Caronte995/spotify-player.nvim)
 - [Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-
+- [Alpha.nvim](https://github.com/goolord/alpha-nvim)

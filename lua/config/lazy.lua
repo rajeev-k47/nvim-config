@@ -212,8 +212,7 @@ end
 
 vim.keymap.set("n", "<leader>hm", show_help)
 
-vim.keymap.set({ "i", "s" }, "<C-k>", function()
+require("config.snippets")
+vim.keymap.set({ "i", "s" }, "<C-i>", function()
   require("luasnip").expand_or_jump()
 end, { silent = true })
-
-require("config.snippets")
