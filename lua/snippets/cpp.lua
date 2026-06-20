@@ -48,6 +48,7 @@ ls.add_snippets("cpp", {
       "#define sza(x) ((int)x.size())",
       "#define all(a) (a).begin(), (a).end()",
       "#define rall(x) (x).rbegin, (x).rend()",
+      "#define rep(i,n) for(int i = 0; i < (n); i++)",
 
       "typedef vector<int> vi;",
       "typedef vector<vi> vvi;",
@@ -73,6 +74,7 @@ ls.add_snippets("cpp", {
       "int main() {",
       "    ios_base::sync_with_stdio(0);",
       "    cin.tie(0); cout.tie(0);",
+      "    int i; //don't pick i as a variable :<",
       "    int tc;",
       "    cin >> tc;",
       "    for (int t = 0; t < tc; t++) {",

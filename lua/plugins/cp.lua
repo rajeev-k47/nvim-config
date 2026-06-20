@@ -1,10 +1,17 @@
 return {
 
   {
-    "xeluxee/competitest.nvim",
+    dir = "/home/rajeev/competitest.nvim",
     dependencies = "MunifTanjim/nui.nvim",
     config = function()
-      require("competitest").setup()
+      require("competitest").setup({
+        ai = {
+          provider = "gemini",
+          model = "gemini-2.5-flash",
+          mode = "auto",
+          count = 3,
+        },
+      })
       vim.keymap.set("n", "<leader>cp", ":CompetiTest run<CR>", { desc = "run problem" })
       vim.keymap.set("n", "<leader>cpa", ":CompetiTest add_testcase<CR>", { desc = "add_testcase" })
       vim.keymap.set("n", "<leader>cpe", ":CompetiTest edit_testcase<CR>", { desc = "edit_testcase" })

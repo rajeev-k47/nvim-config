@@ -78,7 +78,7 @@ require("lazy").setup({
 -- vim.g.tokyonight_dark_float = false
 -- vim.api.nvim_set_hl(0, "Search", { bg = "#444444", fg = "NONE" })
 
-require("competitest").setup() -- to use default configuration:
+require("competitest").setup()
 local cmp = require("cmp")
 cmp.setup({
   enabled = true, -- false if disabled initially
@@ -111,7 +111,6 @@ cmp.setup({
     -- Key bindings for managing completions in virtual text mode.
     key_bindings = {
       -- Accept the current completion.
-      accept = "<Tab>",
       -- Accept the next word.
       accept_word = false,
       -- Accept the next line.
@@ -181,10 +180,6 @@ vim.keymap.set("n", "<leader>sdx", function()
   vim.cmd("Spotify volume_down")
 end, { desc = "Spotify Vol -" })
 
-vim.keymap.set("n", "<leader>cpt", function()
-  require("utils.template").insert_cpp_template()
-end, { desc = "Insert C++ Template" })
-
 local function show_help()
   local buf = vim.api.nvim_create_buf(false, true)
   local file = vim.fn.stdpath("config") .. "/templates/markdown.md"
@@ -213,6 +208,6 @@ end
 vim.keymap.set("n", "<leader>hm", show_help)
 
 require("config.snippets")
-vim.keymap.set({ "i", "s" }, "<C-i>", function()
+vim.keymap.set({ "i", "s" }, "<C-l>", function()
   require("luasnip").expand_or_jump()
 end, { silent = true })
